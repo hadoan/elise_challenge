@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EliseChallenge"
-        xmlns:control="clr-namespace:Plugin.Segmented.Control;assembly=Plugin.Segmented"
+        xmlns:numeric="http://gu.se/NumericInput"
         mc:Ignorable="d"
         Title="Slider Settings" Height="450" Width="400">
     <Grid>
@@ -25,20 +25,37 @@
         <Label Grid.Row="0" Grid.Column="0" Content="Rounding:"/>
 
         <StackPanel Grid.Row="0" Grid.Column="1">
-            <control:SegmentedControl 
-                    x:Name="SegmentedControl" 
-                    SelectedSegment="{Binding SelectedSegment, Mode=TwoWay}"
-                   
-                    ItemsSource="{Binding SegmentItemsSource}">
-                <!--<control:SegmentedControl.Children>
-                        <control:SegmentedControlOption Text="{Binding ChangeText}"/>
-                        <control:SegmentedControlOption Text="Item 2"/>
-                        <control:SegmentedControlOption Text="Item 3"/>
-                        <control:SegmentedControlOption Text="Item 4"/>
-                    </control:SegmentedControl.Children>-->
-            </control:SegmentedControl>
+            <RadioButton GroupName="Rounding" Content="RadioButton"/>
+
+            <RadioButton GroupName="Rounding" Content="RadioButton1"/>
+
 
         </StackPanel>
 
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Digits"/>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+
+            <numeric:DoubleBox  NumberStyles="AllowDecimalPoint, AllowLeadingSign"
+                   Value="{Binding RoundingDigits}" />
+        </StackPanel>
+       
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Digits"/>
+
+        <numeric:DoubleBox Grid.Row="2" Grid.Column="1" NumberStyles="AllowDecimalPoint, AllowLeadingSign"
+                   Value="{Binding  Minimum}" />
+
+        <numeric:IntBox Grid.Row="3" Grid.Column="1" NumberStyles="AllowDecimalPoint, AllowLeadingSign"
+                   Value="{Binding Value}" />
+
+        <numeric:IntBox Grid.Row="4" Grid.Column="1" NumberStyles="AllowDecimalPoint, AllowLeadingSign"
+                   Value="{Binding Maximum}" />
+
+
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="2">
+            <Button x:Name="Cancel" Content="Cancel"/>
+            <Button x:Name="Save" Content="Save"/>
+        </StackPanel>
     </Grid>
 </Window>

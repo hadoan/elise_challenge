@@ -4,11 +4,8 @@
 
     <Grid Background="White">
 
-        <StackPanel HorizontalAlignment="Left" Height="100" Margin="265,147,0,0" VerticalAlignment="Top" >
-            <TextBlock Text="Hello Caliburn Micro!"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   FontSize="20" />
+        <StackPanel HorizontalAlignment="Left" Height="100" Width="400" Margin="265,147,0,0" VerticalAlignment="Top" >
+           <Slider Minimum="{Binding Minimum}" Maximum="{Binding Maximum}" Value="{Binding Value}"/>
             <Button Content="Settings" x:Name="ShowSettings" Width="75"/>
         </StackPanel>
     </Grid>
