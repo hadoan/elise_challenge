@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EliseChallenge", "EliseChallenge\EliseChallenge.csproj", "{543D7EC8-289D-4B4F-903E-5097BEA85A2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{543D7EC8-289D-4B4F-903E-5097BEA85A2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{543D7EC8-289D-4B4F-903E-5097BEA85A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{543D7EC8-289D-4B4F-903E-5097BEA85A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{543D7EC8-289D-4B4F-903E-5097BEA85A2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {366AC772-B53F-4233-88A1-3016B622907F}
+	EndGlobalSection
+EndGlobal
