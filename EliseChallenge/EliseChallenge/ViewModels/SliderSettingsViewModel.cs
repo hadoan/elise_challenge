@@ -70,7 +70,7 @@ namespace EliseChallenge
             if (!string.IsNullOrWhiteSpace(errors))
                 MessageBox.Show(errors, "Error!");
             else if (!CanSave())
-                MessageBox.Show("Value validation error, please check and try again!");
+                MessageBox.Show("Value validation error, please correct and try again!");
             else
                 TryClose(true);
         }
