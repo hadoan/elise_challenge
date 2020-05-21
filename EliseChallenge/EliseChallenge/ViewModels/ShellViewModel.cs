@@ -2,8 +2,15 @@ using Caliburn.Micro;
 using System.Windows;
 
 namespace EliseChallenge {
-    public class ShellViewModel : Conductor<object>, IShell {
-        
+    public class ShellViewModel : Conductor<object>, IShell 
+    {
+
+        public ShellViewModel()
+        {
+            Minimum = 0;
+            Maximum = 100;
+            Value = 50;
+        }
         public void ShowSettings()
         {
             IWindowManager manager = new WindowManager();
@@ -28,8 +35,8 @@ namespace EliseChallenge {
 
         }
 
-        public float Minimum { get; set; }
-        public float Maximum { get; set; }
-        public float Value { get; set; }
+        public double Minimum { get; set; }
+        public double Maximum { get; set; }
+        public double Value { get; set; }
     }
 }

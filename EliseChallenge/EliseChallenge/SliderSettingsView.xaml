@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:EliseChallenge"
         xmlns:numeric="http://gu.se/NumericInput"
         mc:Ignorable="d"
-        Title="Slider Settings" Height="450" Width="400">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Slider Settings" Height="450" Width="400" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterOwner">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
@@ -17,45 +18,98 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
 
+        <StackPanel VerticalAlignment="Center" Grid.Row="0" Grid.Column="1">
+            <TextBlock  Grid.Row="0" Grid.Column="1" Style="{StaticResource MaterialDesignSubtitle1TextBlock}">Rounding</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="2"  VerticalAlignment="Center" >
+            <materialDesign:ColorZone Mode="PrimaryMid">
+                <StackPanel Orientation="Horizontal" Margin="2">
+                    <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" IsChecked="{Binding IsInt}" Content="Integer" />
+                    <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" IsChecked="{Binding IsDouble}" Content="Double" />
+                </StackPanel>
+            </materialDesign:ColorZone>
+        </StackPanel>
 
-        <Label Grid.Row="0" Grid.Column="0" Content="Rounding:"/>
+        <StackPanel VerticalAlignment="Center" Grid.Row="1" Grid.Column="1">
+            <TextBlock  Grid.Row="0" Grid.Column="1" Style="{StaticResource MaterialDesignSubtitle1TextBlock}">Digits</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2"  VerticalAlignment="Center" >
+            <numeric:SpinnerDecorator>
+                <numeric:IntBox  Height="25"   MinValue="0" AllowSpinners="True" IsEnabled="{Binding IsDouble, Mode=TwoWay}" MaxValue="10" x:Name="RoundingDigits"
+                   Value="{Binding RoundingDigits, Mode=TwoWay}" />
+            </numeric:SpinnerDecorator>
+        </StackPanel>
 
-        <StackPanel Grid.Row="0" Grid.Column="1">
-            <RadioButton GroupName="Rounding" Content="RadioButton"/>
+        <StackPanel VerticalAlignment="Center" Grid.Row="2" Grid.Column="1">
+            <TextBlock  Grid.Row="0" Grid.Column="1" Style="{StaticResource MaterialDesignSubtitle1TextBlock}">Minimum</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2"  VerticalAlignment="Center" >
+            <numeric:SpinnerDecorator Visibility="{Binding IsIntSettingVisibility}">
+                <numeric:IntBox x:Name="MinimumInt" Height="25"  MinValue="0" AllowSpinners="True" MaxValue="{Binding Maximum, Mode=TwoWay}"
+                   Value="{Binding Minimum, Mode=TwoWay}" />
+            </numeric:SpinnerDecorator>
 
-            <RadioButton GroupName="Rounding" Content="RadioButton1"/>
+            <numeric:SpinnerDecorator  Visibility="{Binding IsDoubleSettingVisibility}">
+                <numeric:DoubleBox  Height="25"  x:Name="MinimumDouble"
+                           DecimalDigits="{Binding RoundingDigits, Mode=TwoWay}"
+                           AllowSpinners="True"
+                           MaxValue="{Binding Maximum, Mode=TwoWay}"
+                           MinValue="0"           
+                           Value="{Binding Minimum, Mode=TwoWay}" />
+            </numeric:SpinnerDecorator>
+        </StackPanel>
 
+        <StackPanel VerticalAlignment="Center" Grid.Row="3" Grid.Column="1">
+            <TextBlock  Grid.Row="0" Grid.Column="1" Style="{StaticResource MaterialDesignSubtitle1TextBlock}">Value</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="2"  VerticalAlignment="Center" >
+            <numeric:SpinnerDecorator Visibility="{Binding IsIntSettingVisibility}">
+                <numeric:IntBox  Height="25"   MinValue="{Binding Minimum,Mode=TwoWay}" AllowSpinners="True"
+                                 x:Name="ValueInt" MaxValue="{Binding Maximum, Mode=TwoWay}"
+                   Value="{Binding Value, Mode=TwoWay}" />
+            </numeric:SpinnerDecorator>
 
+            <numeric:SpinnerDecorator  Visibility="{Binding IsDoubleSettingVisibility}">
+                <numeric:DoubleBox  Height="25"  AllowSpinners="True" x:Name="ValueDouble"
+                           DecimalDigits="{Binding RoundingDigits, Mode=TwoWay}"
+                           MaxValue="{Binding Maximum, Mode=TwoWay}"
+                           MinValue="{Binding Minimum, Mode=TwoWay}"
+                           Value="{Binding Value, Mode=TwoWay}" />
+            </numeric:SpinnerDecorator>
         </StackPanel>
 
 
-        <Label Grid.Row="1" Grid.Column="0" Content="Digits"/>
-        <StackPanel Grid.Row="1" Grid.Column="1">
-
-            <numeric:DoubleBox  NumberStyles="AllowDecimalPoint, AllowLeadingSign"
-                   Value="{Binding RoundingDigits}" />
+        <StackPanel VerticalAlignment="Center" Grid.Row="4" Grid.Column="1">
+            <TextBlock  Grid.Row="0" Grid.Column="1" Style="{StaticResource MaterialDesignSubtitle1TextBlock}">Maximum</TextBlock>
         </StackPanel>
-       
+        <StackPanel Grid.Row="4" Grid.Column="2"  VerticalAlignment="Center" >
+            <numeric:SpinnerDecorator Visibility="{Binding IsIntSettingVisibility}">
+                <numeric:IntBox  Height="25"   MinValue="{Binding Value, Mode=TwoWay}" x:Name="MaximumInt" AllowSpinners="True"
+                   Value="{Binding Maximum, Mode=TwoWay}" />
+            </numeric:SpinnerDecorator>
 
-        <Label Grid.Row="2" Grid.Column="0" Content="Digits"/>
-
-        <numeric:DoubleBox Grid.Row="2" Grid.Column="1" NumberStyles="AllowDecimalPoint, AllowLeadingSign"
-                   Value="{Binding  Minimum}" />
-
-        <numeric:IntBox Grid.Row="3" Grid.Column="1" NumberStyles="AllowDecimalPoint, AllowLeadingSign"
-                   Value="{Binding Value}" />
-
-        <numeric:IntBox Grid.Row="4" Grid.Column="1" NumberStyles="AllowDecimalPoint, AllowLeadingSign"
-                   Value="{Binding Maximum}" />
+            <numeric:SpinnerDecorator  Visibility="{Binding IsDoubleSettingVisibility}">
+                <numeric:DoubleBox  Height="25"  AllowSpinners="True" x:Name="MaximumDouble"
+                           DecimalDigits="{Binding RoundingDigits, Mode=TwoWay}"
+                           MinValue="{Binding Value, Mode=TwoWay}"
+                           Value="{Binding Maximum, Mode=TwoWay}" />
+            </numeric:SpinnerDecorator>
+        </StackPanel>
 
 
-        <StackPanel Grid.Row="5" Grid.ColumnSpan="2">
-            <Button x:Name="Cancel" Content="Cancel"/>
-            <Button x:Name="Save" Content="Save"/>
+        <StackPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button x:Name="Cancel" Style="{StaticResource MaterialDesignRaisedLightButton}" Width="100" Margin="40,0,0,0">
+                <materialDesign:PackIcon Kind="Cancel" Height="24" Width="24"/>
+            </Button>
+            <Button x:Name="Save" Width="100" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="100,0,0,0">
+                <materialDesign:PackIcon Kind="CheckBold" Height="24" Width="24" />
+            </Button>
         </StackPanel>
     </Grid>
 </Window>
