@@ -1,0 +1,20 @@
+﻿{
+  "components": [
+    {
+      "type": "Implementations.Type, Implementations",
+      "services": [
+        {
+          "type": "Interfaces.IType, Interfaces"
+        }
+      ]
+    },
+    {
+      "type": "Implementations.Manager, Implementations",
+      "services": [
+        {
+          "type": "Interfaces.IManager, Interfaces"
+        }
+      ]
+    }
+  ]
+}

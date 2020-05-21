@@ -5,6 +5,14 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EliseChallengeWpf", "EliseChallenge\EliseChallengeWpf.csproj", "{543D7EC8-289D-4B4F-903E-5097BEA85A2E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Architect", "Architect", "{E552C197-5745-4891-A4E2-604C6C2A6FDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module", "Architect\Module\Module.csproj", "{E28864B7-31EF-4F65-B563-3A24ECAE66D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Architect\Interfaces\Interfaces.csproj", "{D36ED2A7-E6C8-4761-8E77-FC6F7E5EB3AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Implementations", "Architect\Implementations\Implementations.csproj", "{76A3105E-2885-426F-978A-B9B5FE8A292F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +23,26 @@ Global
 		{543D7EC8-289D-4B4F-903E-5097BEA85A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{543D7EC8-289D-4B4F-903E-5097BEA85A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{543D7EC8-289D-4B4F-903E-5097BEA85A2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E28864B7-31EF-4F65-B563-3A24ECAE66D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E28864B7-31EF-4F65-B563-3A24ECAE66D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E28864B7-31EF-4F65-B563-3A24ECAE66D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E28864B7-31EF-4F65-B563-3A24ECAE66D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D36ED2A7-E6C8-4761-8E77-FC6F7E5EB3AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D36ED2A7-E6C8-4761-8E77-FC6F7E5EB3AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D36ED2A7-E6C8-4761-8E77-FC6F7E5EB3AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D36ED2A7-E6C8-4761-8E77-FC6F7E5EB3AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76A3105E-2885-426F-978A-B9B5FE8A292F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76A3105E-2885-426F-978A-B9B5FE8A292F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76A3105E-2885-426F-978A-B9B5FE8A292F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76A3105E-2885-426F-978A-B9B5FE8A292F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E28864B7-31EF-4F65-B563-3A24ECAE66D6} = {E552C197-5745-4891-A4E2-604C6C2A6FDD}
+		{D36ED2A7-E6C8-4761-8E77-FC6F7E5EB3AE} = {E552C197-5745-4891-A4E2-604C6C2A6FDD}
+		{76A3105E-2885-426F-978A-B9B5FE8A292F} = {E552C197-5745-4891-A4E2-604C6C2A6FDD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {366AC772-B53F-4233-88A1-3016B622907F}
